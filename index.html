@@ -1,479 +1,276 @@
-<!DOCTYPE HTML>
-<!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Jonathan Zeng</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jonathan Zeng</title>
+<style>
+  :root {
+    --bg: #f6f3ee;
+    --paper: #fdfbf6;
+    --paper-2: #f3ede0;
+    --ink: #1a1a1a;
+    --ink-2: #404040;
+    --muted: #8a857c;
+    --rule: #d8d2c5;
+    --accent: #a83c2c;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "URW Palladio L", Georgia, serif;
+    font-size: 18px; line-height: 1.6;
+    background-image: radial-gradient(circle at 12px 12px, rgba(26,26,26,0.04) 1.2px, transparent 1.2px);
+    background-size: 24px 24px;
+  }
+  a { color: var(--ink); }
+  .sans { font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .label { font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
 
-		<!-- Header -->
-			<section id="header">
-				<header>
-					<span class="image avatar"><img src="images/pfp2zoomed.png" alt="" /></span>
-					<h1 id="logo"><a href="#">Jonathan Zeng</a></h1>
-					<p>Sophomore at Yale University</p>
-				</header>
-				<nav id="nav">
-					<ul>
-						<li><a href="#one" class="active">Home</a></li>
-						<li><a href="#two">Skills</a></li>
-						<li><a href="#three">Projects & Games</a></li>
-						<li><a href="#four">Resume</a></li>
-					</ul>
-				</nav>
-				<footer>
-					<ul class="icons">
-						<li><a href="https://github.com/JonathanZ837" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="mailto:jonathanzeng2006@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-				</footer>
-			</section>
+  main { max-width: 980px; margin: 0 auto; padding: 40px 24px 80px; }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+  /* Masthead */
+  header.masthead {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+  }
+  header.masthead .left { font-weight: 600; }
+  header.masthead .right { color: var(--muted); }
 
-				<!-- Main -->
-					<div id="main">
+  /* Title card */
+  .title-card {
+    margin-top: 40px; padding: 64px 40px 56px; text-align: center;
+    background: var(--paper); border: 2px solid var(--ink); border-radius: 4px;
+    box-shadow: 8px 8px 0 var(--ink);
+  }
+  .title-card .eyebrow { margin: 0 0 22px; }
+  .title-card h1 {
+    font-family: inherit; font-weight: 400; font-style: italic;
+    font-size: clamp(40px, 6.5vw, 76px); line-height: 1.05; letter-spacing: -0.02em;
+    margin: 0 0 22px;
+  }
+  .title-card h1 .amp { color: var(--accent); font-style: normal; }
+  .title-card p.tag {
+    margin: 0 auto; max-width: 540px; font-size: 19px; color: var(--ink-2); line-height: 1.55;
+  }
 
-						<!-- One -->
-							<section id="one">
-								<div class="image main" data-position="center">
-									<img src="images/banner.jpg" alt="" />
-								</div>
-								<div class="container">
-									<header class="major">
-										<h2>Hi, I'm Jonathan!</h2>
-									</header>
-									<p>I'm a sophomore at Yale University studying Computer Science and Mathematics. 
-            Academically, I'm interested in computer graphics, systems programming, and game engines. For fun, I love cooking, reading novels, ping pong, playing the cello, and <a href = "#three">making games.</a></p>
-								</div>
-							</section>
+  /* Hello card */
+  .hello {
+    margin-top: 32px; display: grid; grid-template-columns: 120px 1fr; gap: 28px; align-items: center;
+    background: var(--paper); border: 2px solid var(--ink); border-radius: 4px;
+    padding: 28px 32px; box-shadow: 8px 8px 0 var(--ink);
+  }
+  .hello img {
+    width: 120px; height: 120px; border-radius: 50%;
+    border: 2px solid var(--ink); object-fit: cover; background: var(--paper-2);
+  }
+  .hello h2 { margin: 0 0 12px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 600; }
+  .hello p { margin: 0; font-size: 19px; line-height: 1.6; color: var(--ink-2); }
+  .hello p a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
 
-						<!-- Two -->
-							<section id="two">
-								<div class="container">
-									<h3>Things I Can Do</h3>
-									<p>I know a couple of programming languages and other things.</p>
-									<ul class="feature-icons">
-										<li class="icon brands fa-python">C, Python, C++, D, Java</li>
-										<li class="icon solid fa-hammer">Git, Linux, Visual Studio, OpenGL, SDL</li>
-										<li class="icon brands fa-unity">Unity, Godot</li>
-										<li class="icon solid fa-palette">Aseprite, Blender 3D</li>
-									</ul>
-								</div>
-							</section>
+  /* Section block */
+  .section {
+    margin-top: 56px; padding: 36px 32px 32px;
+    background: var(--paper); border: 2px solid var(--ink); border-radius: 4px;
+    box-shadow: 8px 8px 0 var(--ink);
+  }
+  .section-head {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    margin: 0 0 28px; padding-bottom: 12px; border-bottom: 1px solid var(--ink);
+  }
+  .section-head h3 {
+    font-family: inherit; font-weight: 500; font-size: 22px; margin: 0; letter-spacing: 0.01em;
+  }
+  .section-head .label { padding-top: 4px; }
 
-						<!-- Three -->
-							<section id="three">
-								<div class="container">
-									<h3>Projects</h3>
-									<p></p>
-									<div class="features">
-										<article>
-											<a href="https://github.com/JonathanZ837/half-edge-extrusions " target="_blank" class="image"><img src="images/extruding.gif" alt="" /></a>
-											<div class="inner">
-												<u><a href="https://github.com/JonathanZ837/half-edge-extrusions" target="_blank"><h4>Face Extrusion on Half-Edge Meshes</h4> </a></u>
-												<p>A 3D graphics app made using OpenGL 4.5 and DLang to perform extrusions on half-edge data structures from imported OBJ meshes. Made for the course CPSC4792 Real-Time 3D Computer Graphics.</p>
-											</div>
-										</article>
-										<article>
-											<a href="https://jonathanz837.github.io/isotetris/" target="_blank" class="image"><img src="images/logo_black.bmp" alt="" /></a>
-											<div class="inner">
-												<u><a href="https://jonathanz837.github.io/isotetris/" target="_blank"><h4>Isotetris</h4> </a></u>
-												<p>An original game/game engine featuring an isometric-twist on Tetris and a built-in editor. Made for the course CPSC4791 Building Game Engines.</p>
-											</div>
-										</article>
-										<article>
-											<a href="https://github.com/JonathanZ837/parse-obj" target="_blank" class="image"><img src="images/bunny.jpg" alt="" /></a>
-											<div class="inner">
-												<u><a href="https://github.com/JonathanZ837/parse-obj" target="_blank"><h4>OBJ Parser</h4> </a></u>
-												<p>Parsing Wavefront .obj files in C++ using multithreading and SIMD parsing. Under the guidance of Professor Michael Shah.</p>
-											</div>
-										</article>
-										<article>
-											<a href="https://jonathanz837.github.io/shader-lab/" target="_blank" class="image"><img src="images/shaderlab.png" alt="" /></a>
-											<div class="inner">
-												<u><a href="https://jonathanz837.github.io/shader-lab/" target="_blank"><h4>Shader Lab</h4> </a></u>
-												<p>A toy made using Three.js and HTML/CSS. Custom shaders in GLSL.</p>
-											</div>
-										</article>
-										<article>
-											<a href="https://jonathanzeng.itch.io/seaside-scavenger" target="_blank" class="image"><img src="images/seasidescavengergameplay.png" alt="" /></a>
-											<div class="inner">
-												<u><a href="https://jonathanzeng.itch.io/seaside-scavenger" target="_blank"><h4>Seaside Scavenger</h4> </a></u>
-												<p>A puzzle matching game about seashells made with Lua and Love2D.</p>
-											</div>
-										</article>
-										<article>
-											<a href="https://jonathanzeng.itch.io/donutland" target="_blank" class="image"><img src="images/stuckindonutlandcutscene.png" alt="" /></a>
-											<div class="inner">
-												<u><a href="https://jonathanzeng.itch.io/donutland" target="_blank"><h4>Stuck in Donutland</h4></a></u>
-												<p>A tasty platformer with a special twist! Made for GMTK 2025 Game Jam.</p>
-											</div>
-										</article>
-									</div>
-								</div>
-							</section>
+  /* Project grid — editorial-typed cards */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; }
+  .card {
+    background: var(--paper); border: 2px solid var(--ink); border-radius: 4px; overflow: hidden;
+    box-shadow: 6px 6px 0 var(--ink);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    text-decoration: none; color: inherit; display: flex; flex-direction: column;
+  }
+  .card:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--ink); }
+  .card:active { transform: translate(3px, 3px); box-shadow: 3px 3px 0 var(--ink); }
+  .card .shot {
+    aspect-ratio: 4 / 3; background: var(--paper-2);
+    border-bottom: 2px solid var(--ink); overflow: hidden;
+  }
+  .card .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .card .meta { padding: 18px 20px 22px; background: var(--paper); flex: 1; display: flex; flex-direction: column; }
+  .card .tag {
+    align-self: flex-start;
+    display: inline-block; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 4px 9px; background: var(--ink); color: var(--paper);
+    border-radius: 2px; margin-bottom: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  .card h4 {
+    font-family: inherit; font-style: italic; font-weight: 400;
+    font-size: 22px; line-height: 1.2; margin: 0 0 10px; letter-spacing: -0.01em;
+  }
+  .card:hover h4 { color: var(--accent); }
+  .card p { margin: 0; font-size: 16px; line-height: 1.5; color: var(--ink-2); }
 
-						<!-- Four -->
-							<section id="four">
-								<div class="container">
-									<h3>Resume</h3>
-									<iframe class="pdf" src="images/resume.pdf#toolbar=0&navpanes=0&scrollbar=0&frameborder=0" 
-									style="width: 700px;height: 900px;border: none;padding-top: 20px"></iframe>
-									
-								</div>
-							</section>
+  /* Stack — definition rows inside the section */
+  .stack { display: grid; grid-template-columns: 180px 1fr; gap: 14px 28px; }
+  .stack dt { color: var(--muted); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; padding-top: 4px; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .stack dd { margin: 0 0 8px; color: var(--ink-2); font-size: 18px; }
 
-						<!-- Five -->
-	<!-- 
-							<section id="five">
-								<div class="container">
-									<h3>Elements</h3>
+  /* Resume row */
+  .resume-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .resume-row p { margin: 0; color: var(--ink-2); font-size: 18px; }
+  .btn {
+    display: inline-block; padding: 13px 24px; background: var(--ink); color: var(--paper);
+    text-decoration: none; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    border: 2px solid var(--ink); border-radius: 2px;
+    box-shadow: 4px 4px 0 var(--accent);
+    transition: transform 0.12s, box-shadow 0.12s, background 0.2s;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--accent); background: var(--accent); }
+  .btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--accent); }
 
-									<section>
-										<h4>Text</h4>
-										<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-										This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-										This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-										<hr />
-										<header>
-											<h4>Heading with a Subtitle</h4>
-											<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-										</header>
-										<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-										<header>
-											<h5>Heading with a Subtitle</h5>
-											<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-										</header>
-										<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-										<hr />
-										<h2>Heading Level 2</h2>
-										<h3>Heading Level 3</h3>
-										<h4>Heading Level 4</h4>
-										<h5>Heading Level 5</h5>
-										<h6>Heading Level 6</h6>
-										<hr />
-										<h5>Blockquote</h5>
-										<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-										<h5>Preformatted</h5>
-										<pre><code>i = 0;
+  /* Footer */
+  footer.colophon {
+    margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--ink);
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+  }
+  footer.colophon a { color: var(--muted); text-decoration: none; margin-right: 18px; }
+  footer.colophon a:hover { color: var(--accent); }
 
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
+  @media (max-width: 560px) {
+    main { padding: 24px 18px 56px; }
+    .title-card { padding: 44px 24px 40px; }
+    .hello { grid-template-columns: 1fr; text-align: center; padding: 24px; }
+    .hello img { margin: 0 auto; }
+    .section { padding: 28px 22px; }
+    .stack { grid-template-columns: 1fr; gap: 4px 0; }
+    .stack dt { padding-top: 12px; }
+  }
+</style>
+</head>
+<body>
+<main>
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-									</section>
+  <header class="masthead">
+    <div class="left">Portfolio</div>
+    <div class="right"></div>
+  </header>
 
-									<section>
-										<h4>Lists</h4>
-										<div class="row">
-											<div class="col-6 col-12-xsmall">
-												<h5>Unordered</h5>
-												<ul>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Sagittis adipiscing lorem eleifend.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ul>
-												<h5>Alternate</h5>
-												<ul class="alt">
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Sagittis adipiscing lorem eleifend.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ul>
-											</div>
-											<div class="col-6 col-12-xsmall">
-												<h5>Ordered</h5>
-												<ol>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Etiam vel felis at lorem sed viverra.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Etiam vel felis at lorem sed viverra.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ol>
-												<h5>Icons</h5>
-												<ul class="icons">
-													<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-													<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-													<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-													<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-													<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-													<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-												</ul>
-											</div>
-										</div>
-										<h5>Actions</h5>
-										<ul class="actions">
-											<li><a href="#" class="button primary">Default</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt">Default</a></li>
-										</ul>
-										<ul class="actions small">
-											<li><a href="#" class="button primary small">Small</a></li>
-											<li><a href="#" class="button small">Small</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul>
-										<div class="row">
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary">Default</a></li>
-													<li><a href="#" class="button">Default</a></li>
-													<li><a href="#" class="button alt">Default</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6 col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary small">Small</a></li>
-													<li><a href="#" class="button small">Small</a></li>
-													<li><a href="#" class="button alt small">Small</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary fit">Default</a></li>
-													<li><a href="#" class="button fit">Default</a></li>
-													<li><a href="#" class="button alt fit">Default</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary small fit">Small</a></li>
-													<li><a href="#" class="button small fit">Small</a></li>
-													<li><a href="#" class="button alt small fit">Small</a></li>
-												</ul>
-											</div>
-										</div>
-									</section>
+  <section class="title-card">
+    <h1>Jonathan Zeng</h1>
+    <p class="tag">Rising Junior at Yale studying Computer Science &amp; Mathematics.</p>
+  </section>
 
-									<section>
-										<h4>Table</h4>
-										<h5>Default</h5>
-										<div class="table-wrapper">
-											<table>
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
+  <section class="hello">
+    <img src="images/pfp2zoomed.png" alt="Jonathan" />
+    <div>
+      <h2>Hello,</h2>
+      <p>I enjoy things like <a href="#work">computer graphics, systems, and games</a>.</p>
+    </div>
+  </section>
 
-										<h5>Alternate</h5>
-										<div class="table-wrapper">
-											<table class="alt">
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
-									</section>
+  <section class="section" id="work">
+    <div class="section-head">
+      <h3>Projects</h3>
+      <span class="label">2024 — 2026</span>
+    </div>
+    <div class="grid">
 
-									<section>
-										<h4>Buttons</h4>
-										<ul class="actions">
-											<li><a href="#" class="button primary">Primary</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt">Alternate</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button primary large">Large</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul>
-										<ul class="actions fit">
-											<li><a href="#" class="button primary fit">Fit</a></li>
-											<li><a href="#" class="button fit">Fit</a></li>
-											<li><a href="#" class="button alt fit">Fit</a></li>
-										</ul>
-										<ul class="actions fit small">
-											<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-											<li><a href="#" class="button fit small">Fit + Small</a></li>
-											<li><a href="#" class="button alt fit small">Fit + Small</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-											<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-											<li><a href="#" class="button alt icon solid fa-check">Icon</a></li>
-										</ul>
-										<ul class="actions">
-											<li><span class="button primary disabled">Primary</span></li>
-											<li><span class="button disabled">Default</span></li>
-											<li><span class="button alt disabled">Alternate</span></li>
-										</ul>
-									</section>
+      <a class="card" href="https://github.com/JonathanZ837/half-edge-extrusions" target="_blank" rel="noopener">
+        <span class="shot"><img src="images/extruding.gif" alt="" /></span>
+        <div class="meta">
+          <span class="tag">OpenGL · D</span>
+          <h4>Half-Edge Extrusions</h4>
+          <p>A 3D graphics app for performing extrusions on half-edge meshes from imported OBJ files. Built for CPSC 4792 Real-Time 3D Computer Graphics.</p>
+        </div>
+      </a>
 
-									<section>
-										<h4>Form</h4>
-										<form method="post" action="#">
-											<div class="row gtr-uniform">
-												<div class="col-6 col-12-xsmall">
-													<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-												</div>
-												<div class="col-6 col-12-xsmall">
-													<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-												</div>
-												<div class="col-12">
-													<select name="demo-category" id="demo-category">
-														<option value="">- Category -</option>
-														<option value="1">Manufacturing</option>
-														<option value="1">Shipping</option>
-														<option value="1">Administration</option>
-														<option value="1">Human Resources</option>
-													</select>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-													<label for="demo-priority-low">Low Priority</label>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-normal" name="demo-priority">
-													<label for="demo-priority-normal">Normal Priority</label>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-high" name="demo-priority">
-													<label for="demo-priority-high">High Priority</label>
-												</div>
-												<div class="col-6 col-12-medium">
-													<input type="checkbox" id="demo-copy" name="demo-copy">
-													<label for="demo-copy">Email me a copy of this message</label>
-												</div>
-												<div class="col-6 col-12-medium">
-													<input type="checkbox" id="demo-human" name="demo-human" checked>
-													<label for="demo-human">I am a human and not a robot</label>
-												</div>
-												<div class="col-12">
-													<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-												</div>
-												<div class="col-12">
-													<ul class="actions">
-														<li><input type="submit" value="Send Message" /></li>
-														<li><input type="reset" value="Reset" class="alt" /></li>
-													</ul>
-												</div>
-											</div>
-										</form>
-									</section>
+      <a class="card" href="https://jonathanz837.github.io/isotetris/" target="_blank" rel="noopener">
+        <span class="shot"><img src="images/logo_black.bmp" alt="" /></span>
+        <div class="meta">
+          <span class="tag">In-house engine · D</span>
+          <h4>Isotetris</h4>
+          <p>An original game and engine with an isometric twist on Tetris and a built-in editor. Built for CPSC 4791 Building Game Engines.</p>
+        </div>
+      </a>
 
-									<section>
-										<h4>Image</h4>
-										<h5>Fit</h5>
-										<span class="image fit"><img src="images/banner.jpg" alt="" /></span>
-										<div class="box alt">
-											<div class="row gtr-50 gtr-uniform">
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-											</div>
-										</div>
-										<h5>Left &amp; Right</h5>
-										<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-										<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-									</section>
+      <a class="card" href="https://github.com/JonathanZ837/parse-obj" target="_blank" rel="noopener">
+        <span class="shot"><img src="images/bunny.jpg" alt="" /></span>
+        <div class="meta">
+          <span class="tag">C++</span>
+          <h4>OBJ Parser</h4>
+          <p>Parsing Wavefront .obj files using multithreading and SIMD, under the guidance of Prof. Michael Shah.</p>
+        </div>
+      </a>
 
-								</div>
-							</section>
-	
+      <a class="card" href="https://jonathanz837.github.io/shader-lab/" target="_blank" rel="noopener">
+        <span class="shot"><img src="images/shaderlab.png" alt="" /></span>
+        <div class="meta">
+          <span class="tag">Three.js · GLSL</span>
+          <h4>Shader Lab</h4>
+          <p>A small toy for writing and previewing custom GLSL shaders in the browser.</p>
+        </div>
+      </a>
 
-					</div>
--->
+      <a class="card" href="https://jonathanzeng.itch.io/seaside-scavenger" target="_blank" rel="noopener">
+        <span class="shot"><img src="images/seasidescavengergameplay.png" alt="" /></span>
+        <div class="meta">
+          <span class="tag">LÖVE2D · Lua</span>
+          <h4>Seaside Scavenger</h4>
+          <p>A puzzle-matching game about seashells.</p>
+        </div>
+      </a>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+      <a class="card" href="https://jonathanzeng.itch.io/donutland" target="_blank" rel="noopener">
+        <span class="shot"><img src="images/stuckindonutlandcutscene.png" alt="" /></span>
+        <div class="meta">
+          <span class="tag">Godot · GDScript</span>
+          <h4>Stuck in Donutland</h4>
+          <p>A tasty platformer with a special twist. Made for the GMTK 2025 Game Jam.</p>
+        </div>
+      </a>
 
-	</body>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h3>Stack</h3>
+      <span class="label">Tools I'm proficient at</span>
+    </div>
+    <dl class="stack">
+      <dt>Languages</dt><dd>C, C++, Python, D, Java</dd>
+      <dt>Graphics &amp; systems</dt><dd>OpenGL, SDL, Git, Linux, Visual Studio</dd>
+      <dt>Game Engines</dt><dd>Unity, Godot, Unreal</dd>
+      <dt>Art tools</dt><dd>Aseprite, Blender 3D</dd>
+    </dl>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h3>Resume</h3>
+      <span class="label">PDF</span>
+    </div>
+    <div class="resume-row">
+      <a class="btn" href="images/resume.pdf" target="_blank" rel="noopener">Download</a>
+    </div>
+  </section>
+
+  <footer class="colophon">
+    <div>© 2026 Jonathan Zeng</div>
+    <div>
+      <a href="https://github.com/JonathanZ837" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:jonathanzeng2006@gmail.com">Email</a>
+    </div>
+  </footer>
+
+</main>
+</body>
 </html>
