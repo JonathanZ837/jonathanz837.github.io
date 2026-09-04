@@ -64,7 +64,6 @@ header.masthead .left { color: var(--ink); }
 }
 .card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px -12px rgba(26,26,26,0.25);
   border-color: #d6cdbd;
 }
 .card .shot {
